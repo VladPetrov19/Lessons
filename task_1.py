@@ -1,8 +1,14 @@
-def fibo(n):
-    if n == 1:
-        return 0
-    if n == 2:
-        return 1
-    return fibo(n - 1) + fibo(n - 2)
+from dataclasses import dataclass
 
-print(fibo(20))
+
+@dataclass
+class DataReader:
+
+    def __init__(self, f=open('datafile.txt')):
+        self.f = f.read()
+
+
+reader = DataReader()
+r = reader.f
+for number in r:
+    print(number)
